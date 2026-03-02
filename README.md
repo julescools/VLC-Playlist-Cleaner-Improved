@@ -5,9 +5,11 @@
 By basaquer (original) and Jules Lazaro (rewrite)
 
 ---
-![Screenshot](images/Screenshot1.png)
-![Screenshot](images/Screenshot2.png)
-![Screenshot](images/Screenshot3.png)
+<p float="left">
+  <img src="images/Screenshot1.png" width="48%">
+  <img src="images/Screenshot2.png" width="48%">
+  <img src="images/Screenshot3.png" width="48%">
+</p>
 
 ## Features
 
