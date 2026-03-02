@@ -5,6 +5,9 @@
 By basaquer (original) and Jules Lazaro (rewrite)
 
 ---
+![Screenshot](images/Screenshot1.png)
+![Screenshot](images/Screenshot2.png)
+![Screenshot](images/Screenshot3.png)
 
 ## Features
 
