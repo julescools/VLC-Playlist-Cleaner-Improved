@@ -310,13 +310,24 @@ end
 
 -- ─── Playback Guard ───────────────────────────────────────────────────────────
 
+-- Stops playback and waits until VLC confirms it has fully stopped before
+-- returning. This prevents crashes when removing the currently playing item.
 function stop_playback_if_needed()
     local status = vlc.playlist.status()
-    if status == "playing" or status == "paused" then
-        vlc.playlist.stop()
-        return true
+    if status ~= "playing" and status ~= "paused" then
+        return false
     end
-    return false
+
+    vlc.playlist.stop()
+
+    -- Poll until VLC confirms stopped, with a timeout of ~2 seconds (200 x 10ms)
+    local attempts = 0
+    while vlc.playlist.status() ~= "stopped" and attempts < 200 do
+        vlc.misc.mwait(10000)  -- 10ms in microseconds
+        attempts = attempts + 1
+    end
+
+    return true
 end
 
 -- ─── Action Runners ───────────────────────────────────────────────────────────
