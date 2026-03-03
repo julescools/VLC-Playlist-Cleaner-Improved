@@ -1,6 +1,6 @@
 # VLC Playlist Manager
 
-**A modern, fully rewritten VLC extension for managing large playlists.**
+**A modern, fully rewritten VLC extension for managing large playlists, including removal of duplicates and orphan files.**
 
 By basaquer (original) and Jules Lazaro (rewrite)
 
